@@ -24,7 +24,8 @@
         }
         
         video {
-            max-width: calc(50% - 100px);
+            display: flex;
+            max-width: calc(300px);
             margin: 0 50px;
             box-sizing: border-box;
             border-radius: 2px;
@@ -44,7 +45,8 @@
     <div class="title">Bem-vindo ao chat em tempo real!</div>
 
 
-    <video id="localVideo" autoplay muted></video>
+    <video class="v1" id="localVideo" autoplay muted></video>
+    <video id="remoteVideo" autoplay></video>
     <video id="remoteVideo" autoplay></video>
 
     <script>
@@ -102,7 +104,7 @@
 
                 //console.log("Conexões abertas: "+ members.length);
                 number = members.length - 1;
-                const isOfferer = members.length >= 4;
+                const isOfferer = members.length >= 3;
 
                 startWebRTC(isOfferer);
 
