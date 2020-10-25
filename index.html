@@ -46,8 +46,8 @@
 
 
     <video id="localVideo" autoplay muted></video>
-    <video id="localVideo" autoplay muted></video>
     <video id="remoteVideo" autoplay></video>
+    <video id="remoteVideo2" autoplay></video>
 
     <script>
         //Início ScaleDrone e WebRTC
@@ -149,6 +149,9 @@
                 if (!remoteVideo.srcObject || remoteVideo.srcObject.id !== stream.id) {
                     remoteVideo.srcObject = stream;
                 }
+                if (!remoteVideo2.srcObject || remoteVideo2.srcObject.id !== stream.id) {
+                    remoteVideo2.srcObject = stream;
+                }
             }
 
 
@@ -163,6 +166,7 @@
             room.on('member_leave', function(member) {
                 //Usuário saiu!
                 remoteVideo.style.display = "none";
+                remoteVideo2.style.display = "none";
             })
 
             room.on('data', (message, client) => {
