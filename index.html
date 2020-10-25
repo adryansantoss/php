@@ -144,15 +144,15 @@
 
             pc.ontrack = event => {
                 const stream = event.streams[0];
-                const stream2 = event.streams[1];
 
 
                 if (!remoteVideo.srcObject || remoteVideo.srcObject.id !== stream.id) {
                     remoteVideo.srcObject = stream;
+                    if (!remoteVideo2.srcObject || remoteVideo2.srcObject.id !== stream.id) {
+                        remoteVideo2.srcObject = stream;
+                    }
                 }
-                if (!remoteVideo2.srcObject || remoteVideo2.srcObject.id !== stream.id) {
-                    remoteVideo2.srcObject = stream2;
-                }
+
             }
 
 
